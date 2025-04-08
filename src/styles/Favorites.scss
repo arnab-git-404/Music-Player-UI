@@ -1,0 +1,18 @@
+// src/styles/Favorites.scss
+.favorites-list {
+    .no-favorites-message {
+      padding: 30px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }

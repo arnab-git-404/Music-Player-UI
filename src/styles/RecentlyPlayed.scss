@@ -1,0 +1,36 @@
+// src/styles/RecentlyPlayed.scss
+.recently-played-list {
+
+  .songs-container {
+      
+    border-radius: 8px;
+    overflow: hidden;
+    // background-color: rgba(0, 0, 0, 0.2);
+    
+    background-color: transparent !important;
+    
+    // Make individual list items transparent as well
+    .list-group-item {
+      background-color: transparent !important;
+      border: none;
+      color: white;
+      // border: none; 
+    }
+  }
+
+    .no-history-message {
+      padding: 30px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }

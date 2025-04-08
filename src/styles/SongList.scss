@@ -1,0 +1,68 @@
+// src/styles/SongList.scss
+.song-list {
+  padding: 10px;
+
+  .section-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .songs-container {
+    border-radius: 8px;
+    overflow: hidden;
+    // background-color: rgba(0, 0, 0, 0.2);
+
+
+
+
+    background-color: transparent !important;
+
+    .list-group-item {
+      background-color: transparent !important;
+      border: none;
+      color: white;
+    }
+  }
+
+  .no-songs-message {
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Animation for list loading
+.songs-container {
+  .song-item {
+    animation: slideIn 0.3s ease;
+    animation-fill-mode: both;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.05}s;
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

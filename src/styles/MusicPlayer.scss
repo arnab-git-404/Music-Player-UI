@@ -1,0 +1,169 @@
+// src/styles/MusicPlayer.scss
+.music-player {
+
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    animation: fadeIn 0.5s ease;
+    
+    .player-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    
+    .album-artwork {
+      margin-bottom: 10px;
+      
+      .cover-art {
+        width: 100%;
+        height: 100%;
+        // max-width: 280px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+    
+    .song-info {
+      // text-align: center;
+      margin-bottom: 20px;
+      
+      .song-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--text-color);
+      }
+      
+      .artist-name {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 0;
+      }
+    }
+    
+    .player-controls {
+      width: 100%;
+      
+      .time-control {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        
+        .current-time,
+        .song-duration {
+          min-width: 40px;
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+        }
+        
+        .time-slider {
+          flex: 1;
+          height: 4px;
+          margin: 0 10px;
+          appearance: none;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 2px;
+          cursor: pointer;
+          
+          &::-webkit-slider-thumb {
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+      }
+      
+      .control-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .control-btn {
+          background-color: transparent;
+          color: var(--text-color);
+          font-size: 1.2rem;
+          margin: 0 15px;
+          transition: all var(--transition-speed);
+          
+          &:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+          }
+          
+          &.play-btn {
+            background-color: var(--primary-color);
+            color: #000;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &:hover {
+              transform: scale(1.1);
+              background-color: lighten(#1db954, 5%);
+            }
+          }
+          
+          .favorite-active {
+            color: #e91e63;
+          }
+        }
+      }
+    }
+    
+    &.empty-player {
+      .placeholder-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .placeholder-artwork {
+          width: 200px;
+          height: 200px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          margin-bottom: 20px;
+        }
+        
+        h3 {
+          color: var(--text-secondary);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .volume-slider {
+    display: none; // Hidden by default
+    position: absolute;
+    bottom: 50px; // Adjust as needed
+    left: 50%; // Center horizontally
+    transform: translateX(-50%);
+    width: 150px; // Adjust slider width
+    transition: opacity 0.3s ease;
+  }
+  
+  .volume-slider.horizontal-slider {
+    display: block; // Show when active
+    opacity: 1;
+  }
